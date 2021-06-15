@@ -48,8 +48,15 @@ namespace MvcClient
                     //需要存储tokens到cookie中。默认是false，为了减小cookie的大小
                     options.SaveTokens = true;
                     
-                    options.Scope.Add("profile");
-                    options.GetClaimsFromUserInfoEndpoint = true;
+                    options.Scope.Add("api1");
+                    options.Scope.Add("offline_access");
+
+                    #region profile测试
+
+                    // options.Scope.Add("profile");
+                    // options.GetClaimsFromUserInfoEndpoint = true;
+
+                    #endregion
                 });
         }
 

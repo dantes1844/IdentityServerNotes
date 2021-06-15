@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MvcClient.Models;
+using Newtonsoft.Json.Linq;
 
 namespace MvcClient.Controllers
 {
@@ -37,6 +41,20 @@ namespace MvcClient.Controllers
         public IActionResult Logout()
         {
             return SignOut("Cookies", "oidc");
+        }
+
+        public async Task<IActionResult> CallApi()
+        {
+            var accessToken =await HttpContext.GetTokenAsync("access_token");
+            
+            var client = new HttpClient();
+            //如果之前已经登陆过identityserver，后添加的scope授权，那么这里可能会报403错误，此时只需要退出登陆重新登陆即可解决问题
+            //https://stackoverflow.com/questions/49552156/identityserver4-authorization-returns-403-forbidden-instead-of-401
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+            var content = await client.GetStringAsync("https://localhost:6001/identity");
+
+            ViewBag.Json = JArray.Parse(content).ToString();
+            return View();
         }
     }
 }

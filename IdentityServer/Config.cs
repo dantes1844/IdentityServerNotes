@@ -39,7 +39,7 @@ namespace IdentityServer
                 new Client()
                 {
                     ClientId = "mvc",
-                    ClientSecrets = new List<Secret>() {new Secret("secret".Sha256())},
+                    ClientSecrets = {new Secret("secret".Sha256())},
 
                     AllowedGrantTypes = GrantTypes.Code,
 
@@ -48,6 +48,7 @@ namespace IdentityServer
                     //退出登录后的处理跳转地址
                     PostLogoutRedirectUris = {"https://localhost:5002/signout-callback-oidc"},
 
+                    AllowOfflineAccess = true,
                     //这里用来配置客户端可以获取哪些claims,
                     //在这里没有添加的，客户端如果强制获取，会报错：
                     //Sorry, there was an error : invalid_scope
@@ -55,7 +56,8 @@ namespace IdentityServer
                     AllowedScopes = new List<string>()
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
-                        IdentityServerConstants.StandardScopes.Profile
+                        IdentityServerConstants.StandardScopes.Profile,
+                        "api1"
                     }
                 }
             };
