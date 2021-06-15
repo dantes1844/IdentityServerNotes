@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcClient", "MvcClient\MvcClient.csproj", "{AD94E6DF-4A70-4DE8-A0F9-E8F07A14218E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JavaScriptClient", "JavaScriptClient\JavaScriptClient.csproj", "{7F339DAE-EF55-48B0-B2F2-859F9375E6BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -72,5 +74,17 @@ Global
 		{AD94E6DF-4A70-4DE8-A0F9-E8F07A14218E}.Release|x64.Build.0 = Release|Any CPU
 		{AD94E6DF-4A70-4DE8-A0F9-E8F07A14218E}.Release|x86.ActiveCfg = Release|Any CPU
 		{AD94E6DF-4A70-4DE8-A0F9-E8F07A14218E}.Release|x86.Build.0 = Release|Any CPU
+		{7F339DAE-EF55-48B0-B2F2-859F9375E6BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F339DAE-EF55-48B0-B2F2-859F9375E6BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F339DAE-EF55-48B0-B2F2-859F9375E6BB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7F339DAE-EF55-48B0-B2F2-859F9375E6BB}.Debug|x64.Build.0 = Debug|Any CPU
+		{7F339DAE-EF55-48B0-B2F2-859F9375E6BB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7F339DAE-EF55-48B0-B2F2-859F9375E6BB}.Debug|x86.Build.0 = Debug|Any CPU
+		{7F339DAE-EF55-48B0-B2F2-859F9375E6BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F339DAE-EF55-48B0-B2F2-859F9375E6BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F339DAE-EF55-48B0-B2F2-859F9375E6BB}.Release|x64.ActiveCfg = Release|Any CPU
+		{7F339DAE-EF55-48B0-B2F2-859F9375E6BB}.Release|x64.Build.0 = Release|Any CPU
+		{7F339DAE-EF55-48B0-B2F2-859F9375E6BB}.Release|x86.ActiveCfg = Release|Any CPU
+		{7F339DAE-EF55-48B0-B2F2-859F9375E6BB}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
